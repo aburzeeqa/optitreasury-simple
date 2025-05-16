@@ -1,5 +1,4 @@
 from flask import Flask, render_template
-import opti_db_setup  # هذا السطر الجديد لتشغيل إنشاء الجداول
 
 app = Flask(__name__,
             static_folder='src/static',
