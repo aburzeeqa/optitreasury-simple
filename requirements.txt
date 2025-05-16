@@ -1,3 +1,5 @@
-flask==2.0.3
-werkzeug==2.0.3
-gunicorn==21.2.0
+Flask
+SQLAlchemy
+psycopg2-binary
+PyJWT
+Werkzeug
