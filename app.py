@@ -8,5 +8,9 @@ app = Flask(__name__,
 def home():
     return render_template('index.html')
 
+@app.route('/accounts')
+def accounts():
+    return render_template('accounts.html')
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=10000)
