@@ -57,3 +57,6 @@ class Payment(Base):
 Base.metadata.create_all(bind=engine)
 
 print("Tables created successfully.")
+def get_db_connection():
+    return engine.connect()
+
