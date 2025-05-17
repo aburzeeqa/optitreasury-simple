@@ -14,3 +14,15 @@ def accounts():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=10000)
+@app.route('/summary')
+def balance_summary():
+    from opti_db_setup import get_db_connection
+    conn = get_db_connection()
+    cursor = conn.cursor()
+
+    cursor.execute('SELECT balance FROM bank_accounts')
+    balances = cursor.fetchall()
+    total = sum([b[0] for b in balances])
+
+    conn.close()
+    return render_template('summary.html', total_balance="{:,.2f}".format(total))
