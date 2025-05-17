@@ -2,10 +2,80 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Accounts</title>
+    <title>Bank Accounts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        th, td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        .back-link {
+            margin-top: 20px;
+            display: inline-block;
+        }
+    </style>
 </head>
 <body>
-    <h1>Accounts Page</h1>
-    <p>This is the accounts page of OptiTreasury.</p>
+
+    <h1>Bank Accounts</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Account Name</th>
+                <th>Bank</th>
+                <th>IBAN</th>
+                <th>Balance (SAR)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Main Operating Account</td>
+                <td>Al Rajhi Bank</td>
+                <td>SA2980000001234567891234</td>
+                <td>1,250,000.00</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Payroll Account</td>
+                <td>SNB</td>
+                <td>SA2310000009876543211234</td>
+                <td>740,000.00</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Petty Cash</td>
+                <td>Riyad Bank</td>
+                <td>SA2755000007894561234567</td>
+                <td>25,000.00</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="/" class="back-link">← Back to Home</a>
+
 </body>
 </html>
