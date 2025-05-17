@@ -20,9 +20,9 @@ def balance_summary():
     conn = get_db_connection()
     cursor = conn.cursor()
 
-    cursor.execute('SELECT balance FROM bank_accounts')
+    cursor.execute('SELECT COALESCE(balance, 0) FROM bank_accounts')
     balances = cursor.fetchall()
-    total = sum([b[0] for b in balances])
+    total = sum(float(b[0]) for b in balances)
 
     conn.close()
     return render_template('summary.html', total_balance="{:,.2f}".format(total))
