@@ -8,9 +8,10 @@ import datetime
 import enum
 
 # رابط الاتصال بقاعدة بيانات PostgreSQL على Render
-DATABASE_URL = "postgresql://optitreasury_db_user:3TX4fyuNaApfFIw81wwsbFtyK4cOBVMU@dpg-d0jp51odl3ps73co7490-a.frankfurt-postgres.render.com/optitreasury_db"
+import os
 
-# إعداد الاتصال
+DATABASE_URL = f"postgresql://{os.getenv('DB_USERNAME')}:{os.getenv('DB_PASSWORD')}@{os.getenv('DB_HOST')}:{os.getenv('DB_PORT')}/{os.getenv('DB_NAME')}"
+
 engine = create_engine(DATABASE_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
